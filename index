@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+* {box-sizing: border-box;}
+
+/* Vstupní pole na celou šířku */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;}
+
+/* Nastavení stylu pro všechna tlačítka */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;}
+
+button:hover {
+  opacity: 1;} 
+
+/* Přidejte výplň k prvkům kontejneru */
+.container {
+  padding: 16px;}
+ 
+/* The Modal (pozadí) */
+.modal {
+  display: none; /* Ve výchozím nastavení skryté */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Plná šířka */
+  height: 100%; /* Plná výška */
+  overflow: auto; /* Enable - V případě potřeby povolte posouvání */
+  background-color: rgb(0,0,0); /* Záložní barva */
+  background-color: rgba(0,0,0,0.4); /* Černá s průhledností */
+  padding-top: 50px;}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto auto; /* 5% shora, auto, 15% zespodu, auto a na střed */
+  border: 1px solid #888;
+  width: 50%;} /* Může to být více či méně, v závislosti na velikosti obrazovky */
+ 
+/* Tlačítko zavřít (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;}
+
+/* nastavení tlačítka (X) */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;}
+  
+/* Extra styly pro tlačítko (X) */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;}  
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s}
+
+span.psw {
+  float: right;
+  padding-top: 16px;}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}}
+
+/* Změňte styly pro tlačítko rozpětí na extra malých obrazovkách */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;}
+     
+</style>
+</head>
+<body>
+
+<button onclick="document.getElementById('prihlasit').style.display='block'" style="width:auto; ">Přihlásit se</button>
+
+<div id="prihlasit" class="modal">
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('prihlasit').style.display='none'" class="close" title="Zavřít">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Přihlašovací jméno</b></label>
+      <input type="text" placeholder="Zadat přihlašovací jméno" name="uname" required>
+
+      <label for="psw"><b>Heslo</b></label>
+      <input type="password" placeholder="Zadat heslo" name="psw" required>
+        
+      <button type="submit" >Přihlásit se</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Zapamatovat si mě
+      </label>
+      <span class="psw">Zapomenuté <a href="#">heslo?</a></span>
+    </div>
+  </form>
+</div>
+
+<button onclick="document.getElementById('registrace').style.display='block'" style="width:auto;">Registrace</button>
+
+<div id="registrace" class="modal">
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('registrace').style.display='none'" class="close" title="Zavřít">&times;</span>
+    </div>
+    
+    <div class="container">
+      <h1>Registrace</h1>
+      <p>Chcete-li vytvořit účet, vyplňte tento formulář.</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Zadat Email" name="email" required>
+      <br>
+      <label for="psw"><b>Heslo</b></label>
+      <input type="password" placeholder="Zadat Heslo" name="psw" required>
+      <br>
+      <label for="psw-repeat"><b>Znovu heslo</b></label>
+      <input type="password" placeholder="Znovu Heslo" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Zapamatovat si mě
+      </label>
+
+      <p>Vytvořením účtu souhlasíte s podmínkami <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">Přihlásit se</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('prihlasit');
+var modal1 = document.getElementById('registrace');
+
+// Když uživatel klikne kdekoli do modalu, zavřete jej
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";}
+    if (event.target == modal1) {
+        modal1.style.display = "none";}
+}
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
