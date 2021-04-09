@@ -1,0 +1,102 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;}
+
+* {box-sizing: border-box;}
+
+/* Vstupní pole na celou šíøku */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;}
+
+/* Nastavení stylu pro všechna tlaèítka */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;}
+
+button:hover {
+  opacity: 1;} 
+
+/* Pøidejte výplò k prvkùm kontejneru */
+.container {
+  padding: 16px;}
+ 
+/* The Modal (pozadí) */
+.modal {
+  display: none; /* Ve výchozím nastavení skryté */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Plná šíøka */
+  height: 100%; /* Plná výška */
+  overflow: auto; /* Enable - V pøípadì potøeby povolte posouvání */
+  background-color: rgb(0,0,0); /* Záložní barva */
+  background-color: rgba(0,0,0,0.4); /* Èerná s prùhledností */
+  padding-top: 50px;}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto auto; /* 5% shora, auto, 15% zespodu, auto a na støed */
+  border: 1px solid #888;
+  width: 50%;} /* Mùže to být více èi ménì, v závislosti na velikosti obrazovky */
+ 
+/* Tlaèítko zavøít (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;}
+
+/* nastavení tlaèítka (X) */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;}
+  
+/* Extra styly pro tlaèítko (X) */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;}  
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s}
+
+span.psw {
+  float: right;
+  padding-top: 16px;}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}}
+
+/* Zmìòte styly pro tlaèítko rozpìtí na extra malých obrazovkách */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;}

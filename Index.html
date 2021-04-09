@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./Style.css">
+    </head>
+
+<body>
+
+<button onclick="document.getElementById('prihlasit').style.display='block'" style="width:auto; ">Pøihlásit se</button>
+
+<div id="prihlasit" class="modal">
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('prihlasit').style.display='none'" class="close" title="Zavøít">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Pøihlašovací jméno</b></label>
+      <input type="text" placeholder="Zadat pøihlašovací jméno" name="uname" required>
+
+      <label for="psw"><b>Heslo</b></label>
+      <input type="password" placeholder="Zadat heslo" name="psw" required>
+        
+      <button type="submit" >Pøihlásit se</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Zapamatovat si mì
+      </label>
+      <span class="psw">Zapomenuté <a href="#">heslo?</a></span>
+    </div>
+  </form>
+</div>
+
+<button onclick="document.getElementById('registrace').style.display='block'" style="width:auto;">Registrace</button>
+
+<div id="registrace" class="modal">
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('registrace').style.display='none'" class="close" title="Zavøít">&times;</span>
+    </div>
+    
+    <div class="container">
+      <h1>Registrace</h1>
+      <p>Chcete-li vytvoøit úèet, vyplòte tento formuláø.</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Zadat Email" name="email" required>
+      <br>
+      <label for="psw"><b>Heslo</b></label>
+      <input type="password" placeholder="Zadat Heslo" name="psw" required>
+      <br>
+      <label for="psw-repeat"><b>Znovu heslo</b></label>
+      <input type="password" placeholder="Znovu Heslo" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Zapamatovat si mì
+      </label>
+
+      <p>Vytvoøením úètu souhlasíte s podmínkami <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">Pøihlásit se</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+    <script type="text/javascript" src="./Script.js"></script>
+
+</body>
+</html>
